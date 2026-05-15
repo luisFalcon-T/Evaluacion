@@ -80,5 +80,28 @@ namespace ejemploBd
 				MessageBox.Show("Error: " + ex.Message);
 			}
 		}
+		
+		void BtnVpreguntasClick(object sender, EventArgs e)
+		{
+			if (dgvModulos.CurrentRow == null) 
+		    {
+		        MessageBox.Show("Por favor, selecciona una fila primero.");
+		        return;
+		    }
+		
+		    try 
+		    {
+		        var fila = dgvModulos.CurrentRow;
+		        int id = Convert.ToInt32(fila.Cells["id"].Value);
+		        string nombreModulo = fila.Cells["nombre_es"].Value.ToString();
+		
+		        GestionPreguntas preguntas = new GestionPreguntas(id, nombreModulo);
+		        preguntas.ShowDialog();
+		    }
+		    catch (Exception ex)
+		    {
+		        MessageBox.Show("Error: " + ex.Message);
+		    }
+		}
 	}
 }
