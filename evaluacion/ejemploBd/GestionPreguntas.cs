@@ -20,6 +20,7 @@ namespace ejemploBd
 			// El estudiante debe añadir los parámetros y asignar los valores aquí
 			this._idModulo = id;
 			this._nombreModulo = nombreModulo;
+			CargarPreguntas();
 			//
 			//lamar a funcion 
 		}
